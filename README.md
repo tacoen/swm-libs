@@ -44,4 +44,4 @@ The outpur shall be
 </head>
 ```
 
-Ok, now for the wiki
+[Ok, now for the wiki](https://github.com/tacoen/swm-libs/wiki)
