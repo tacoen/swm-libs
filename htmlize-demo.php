@@ -16,6 +16,8 @@ $title = "demo";
 
 $h=new htmlize(); 
 
+/* Snipset #1 */
+
 $h->create_container('head','head'); 
 $h->add('head',"<meta name='viewport' content='user-scalable=no, width=device-width, initial-scale=1, maximum-scale=1' />"); 
 $h->add('head',"<meta charset='UTF-8' />"); 
@@ -29,9 +31,13 @@ $h->style_query('head','style','prop/style.css','all');
 if (file_exists(ROOT_PATH."style.css")) { $h->add('head',"<link rel='stylesheet' type='text/css' id='css_dev' href='".ROOT_URL."style.css' />"); }
 $h->add('head',"<title>$title</title>"); 
 
+/* Snipset #2 */
+
 $h->create_container('foot','div',"class='foot__'"); 
 $h->script_query('foot','function','prop/function.js'); 
 if (file_exists(ROOT_PATH."function.js")) { $h->add('foot',"<script type='text/javascript' id='js_dev' href='".ROOT_URL."function.js' /></script>"); }
+
+/* Snipset #3 */
 
 $h->create_container('form1','form',"action='index.php' method='post'"); 
 $h->form_query('form1','input','nama','text','Smith','Full Name');
@@ -39,6 +45,8 @@ $h->form_query('form1','select','sex',NULL,'male','Sex',array('male','female') )
 $h->form_query('form1','textarea','address',NULL,'test','Address',NULL,array('input','output') );
 $h->fq_submitter('form1','submit');
 $h->fq_addAttribute('form1','nama',"autocompelete='off'");
+
+/* Snipset #4 */
 
 $h->create_container('content','div'); 
 $h->set_cache('content',false); 
@@ -49,12 +57,18 @@ $h->query('content','p','Lorem Ipsum you say it.',NULL,2);
 $h->query('content','p','and what ever'); 
 $h->add('content',"<div class='clear'></div>"); 
 
+/* Skelton */
+
 echo "<html>";
-echo $h->build('head'); 
+
+echo $h->build('head');  /* Snipset #1 */
+
 echo "<body>";
-echo $h->build('content'); 
-echo $h->build('form1'); 
-echo $h->build('foot'); 
+
+echo $h->build('content'); /* Snipset #4 */
+echo $h->build('form1'); /* Snipset #3 */
+echo $h->build('foot'); /* Snipset #2 */
+
 echo "</body>";
 echo "</html>";
 
