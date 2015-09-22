@@ -32,13 +32,20 @@ class htmlize {
 		}
 	}
 
-	public function query($container,$element,$func=NULL,$attr=NULL,$order=NULL,$array_passed=array(),$enclose=false ) {
+	public function query($container,$element=NULL,$func=NULL,$attr=NULL,$order=NULL,$array_passed=array(),$enclose=false ) {
 		if (!isset($this->{$container})) { throw new Exception(__METHOD__." '$container' not found"); }
 		if ($this->{$container}['cache']==1 ) { return; }
 		$i=$this->{$container}['index']++; if (!$order) { $order=$i; }
 		$this->{$container}['Q'][$i]['o']=$order;
-		$html="<$element"; if($attr) { $html .=" $attr"; }
-		if ($enclose==false) { $html .=">"; } else { $html .="/>"; }
+		if ($elemenet) { 
+			$html="<$element"; 
+			if($attr) { $html .=" $attr"; }
+			if ($enclose==false) { $html .=">"; } else { $html .="/>"; }
+
+		} else {
+			$html=""; /* headless */
+			$enclose=true;
+		}
 		if (function_exists($func."_func")) { $html .=call_user_func($func."_func",$array_passed); } else { $html .=$func; }
 		if ($enclose==false) { $html .="</$element>"; }
 		$this->{$container}['Q'][$i]['h']=$html;
