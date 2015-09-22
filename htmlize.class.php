@@ -5,13 +5,6 @@
  * (c) tacoen, dibuat untuk mendukung pemalasan diri.
  */
 
-
-/* -- User function -------------------------------------------------------------------------------------- */
-
-function test_func($w) {
-	return "$w[0] and $w[1] are friendly element";
-}
-
 /* -- Class -------------------------------------------------------------------------------------- */
 
 class htmlize {
