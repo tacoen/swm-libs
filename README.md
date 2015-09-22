@@ -60,7 +60,7 @@ See htmlize.demo.php, and this is there output:
 <link rel='stylesheet' type='text/css' media='all' id='css_reset' href='prop/reset.css'/>
 <link rel='stylesheet' type='text/css' media='all' id='css_font' href='prop/icmat/style.css'/>
 <link rel='stylesheet' type='text/css' media='all' id='css_style' href='prop/style.css'/>
-<link rel='stylesheet' type='text/css' id='css_dev' href='http://radius.v.dibiakcom.net/hotspot/09/style.css' />
+<link rel='stylesheet' type='text/css' id='css_dev' href='http://mydomain.com/hotspot/09/style.css' />
 <title>demo</title>
 </head>
 <body><div>
@@ -79,7 +79,7 @@ See htmlize.demo.php, and this is there output:
 </form>
 <div class='foot__'>
 <script type='text/javascript' id='js_function' src='prop/function.js'></script>
-<script type='text/javascript' id='js_dev' href='http://radius.v.dibiakcom.net/hotspot/09/function.js' /></script>
+<script type='text/javascript' id='js_dev' href='http://mydomain.com/hotspot/09/function.js' /></script>
 </div>
 </body></html>
 ```
